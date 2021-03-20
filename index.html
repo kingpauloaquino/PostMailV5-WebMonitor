@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<head>
+  <title>PostMailV5 Web Monitoring (Real-Time)</title>
+  <link rel="apple-touch-icon" href="https://www.msg4wrd.io/images/k2-icon.png">
+  <link rel="shortcut icon" type="image/png" href="https://www.msg4wrd.io/images/k2-icon.png" />
+  <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous" />
+  <style>
+    body {
+      padding: 20px;
+      font-family: 'Montserrat', helvetica, sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      background-color: #2a3035;
+      color: rgb(236, 235, 235);
+    }
+    .card-bgcolor-0 {
+      background-color: rgb(204, 203, 150);
+    }
+    .card-bgcolor-1  {
+      background-color:powderblue;
+    }
+    .card-bgcolor-2  {
+      background-color:salmon;
+    }
+    .row {
+      margin: 1px;
+    }
+
+    .card-body {
+      padding: .75rem;
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 17px;
+      width: 100%;
+    }
+
+    a {
+        color:rgb(197, 224, 197);
+    }
+
+    a:hover {
+        color:rgb(64, 92, 64);
+    }
+
+    .card-title span {
+      font-weight: 600;
+      font-size: 11px;
+      float: right;
+      color: rgb(55, 54, 59);
+      margin-top: 3px;
+    }
+
+    .font-color-0 {
+      /* color:rgb(224, 176, 224); */
+       color:rgb(197, 224, 197);
+    }
+
+    .font-color-1 {
+      /* color:rgb(137, 228, 47); */
+       color:rgb(197, 224, 197);
+    }
+
+    .font-color-2 {
+      /* color:rgb(189, 142, 152); */
+       color:rgb(197, 224, 197);
+    }
+
+    .font-color-3 {
+      /* color:rgb(187, 181, 93); */
+       color:rgb(197, 224, 197);
+    }
+
+    .font-color-4 {
+      color:rgb(197, 224, 197);
+    }
+    
+    .font-color-5 {
+      /* color:rgb(231, 108, 170); */
+       color:rgb(197, 224, 197);
+    }
+
+    .font-color-6 {
+      /* color:rgb(250, 183, 59); */
+       color:rgb(197, 224, 197);
+    }
+
+    .font-color-7 {
+      /* color:rgb(174, 135, 252); */
+       color:rgb(197, 224, 197);
+    }
+
+    .font-color-8 {
+      /* color:rgb(66, 255, 255); */
+       color:rgb(197, 224, 197);
+    }
+
+    .font-color-9 {
+      /* color:rgb(250, 74, 54); */
+       color:rgb(197, 224, 197);
+    }
+
+  </style>
+  <script src="app.js"></script>
+</head>
+<body>
+  
+  <div style="height: 50px; padding: 5px;">
+    <h2 class="float-left">PostMailV5 Web Monitoring (Real-Time)</h2>
+    <h4 id="h4-status-counter" class="float-right mt-1"><span style="color:rgb(210, 231, 21)">0 <i
+          class='fas fa-paper-plane' title='Total Sent'></i></span> | <span style="color:rgb(240, 47, 95)">0 <i
+          class='fas fa-bug' title='Total Failed'></i></span></h4>
+  </div>
+
+  <div id="notification-alert-a"></div>
+
+  <div id="notification-alert-b"></div>
+
+  <div id="app" style="margin-top: 20px;">
+   
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 30px;">#</th>
+          <th scope="col" style="width: 120px;">WORKER ID</th>
+          <th scope="col" style="width: 120px;">PROCESS ID</th>
+          <th scope="col">SUBJECT</th>
+          <th scope="col">MESSAGE</th>
+          <th scope="col" style="width: 310px;">DATETIME</th>
+          <th scope="col" style="width: 30px;">ACTION</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
+    integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+</body>
