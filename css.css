@@ -3,7 +3,7 @@ body {
     font-family: 'Montserrat', helvetica, sans-serif;
     font-size: 15px;
     font-weight: 400;
-    background-color: #2a3035;
+    background-color: #19242c;
     color: rgb(236, 235, 235);
 }
 .card-bgcolor-0 {
@@ -27,6 +27,14 @@ body {
     font-weight: 600;
     font-size: 17px;
     width: 100%;
+}
+
+.table-dark {
+    background-color: #121b22;
+}
+
+.table-dark td, .table-dark th, .table-dark thead th {
+    border-color: #1f2e38;
 }
 
 a {
