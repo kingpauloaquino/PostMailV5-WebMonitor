@@ -3,7 +3,7 @@ var sent = 0;
 var failed = 0;
 Pusher.logToConsole = true;
 var pusher = new Pusher('1e1bea48a3fcca53c764', {
-    cluster: '1174497'
+    cluster: 'ap1'
 });
 
 var channelFailedA = pusher.subscribe('my-postmail-failedsA');
