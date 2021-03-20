@@ -1,0 +1,95 @@
+body {
+      padding: 20px;
+      font-family: 'Montserrat', helvetica, sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      background-color: #2a3035;
+      color: rgb(236, 235, 235);
+    }
+    .card-bgcolor-0 {
+      background-color: rgb(204, 203, 150);
+    }
+    .card-bgcolor-1  {
+      background-color:powderblue;
+    }
+    .card-bgcolor-2  {
+      background-color:salmon;
+    }
+    .row {
+      margin: 1px;
+    }
+
+    .card-body {
+      padding: .75rem;
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 17px;
+      width: 100%;
+    }
+
+    a {
+        color:rgb(197, 224, 197);
+    }
+
+    a:hover {
+        color:rgb(64, 92, 64);
+    }
+
+    .card-title span {
+      font-weight: 600;
+      font-size: 11px;
+      float: right;
+      color: rgb(55, 54, 59);
+      margin-top: 3px;
+    }
+
+    .font-color-0 {
+      /* color:rgb(224, 176, 224); */
+       color:rgb(197, 224, 197);
+    }
+
+    .font-color-1 {
+      /* color:rgb(137, 228, 47); */
+       color:rgb(197, 224, 197);
+    }
+
+    .font-color-2 {
+      /* color:rgb(189, 142, 152); */
+       color:rgb(197, 224, 197);
+    }
+
+    .font-color-3 {
+      /* color:rgb(187, 181, 93); */
+       color:rgb(197, 224, 197);
+    }
+
+    .font-color-4 {
+      color:rgb(197, 224, 197);
+    }
+    
+    .font-color-5 {
+      /* color:rgb(231, 108, 170); */
+       color:rgb(197, 224, 197);
+    }
+
+    .font-color-6 {
+      /* color:rgb(250, 183, 59); */
+       color:rgb(197, 224, 197);
+    }
+
+    .font-color-7 {
+      /* color:rgb(174, 135, 252); */
+       color:rgb(197, 224, 197);
+    }
+
+    .font-color-8 {
+      /* color:rgb(66, 255, 255); */
+       color:rgb(197, 224, 197);
+    }
+
+    .font-color-9 {
+      /* color:rgb(250, 74, 54); */
+       color:rgb(197, 224, 197);
+    }
